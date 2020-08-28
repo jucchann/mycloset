@@ -1,0 +1,10 @@
+<h1>アイテム一覧ページ</h1>
+
+<li><%= link_to 'サインアップ ', new_user_registration_path %></li>
+<li><%= link_to 'サインイン', user_session_path %></li>
+<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+<li><%= link_to 'アイテムを登録する', new_item_path %></li>
+
+<% @items.each do |item| %>
+<%= image_tag item.image %>
+<% end %>

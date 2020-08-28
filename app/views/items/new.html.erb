@@ -1,0 +1,32 @@
+<h1>アイテム登録ページ</h1>
+<%= form_with model: @item, local: true do |f| %>
+
+<li>画像
+<%= f.file_field :image, id:"item-image" %></li>
+
+<li>カテゴリー
+<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %></li>
+
+<li>ブランド
+<%= f.collection_select(:brand_id, Brand.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %></li>
+
+<li>色
+<%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %></li>
+
+<li>サイズ
+<%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %></li>
+
+
+<li>購入価格
+<%= f.text_area :price, placeholder: "購入価格" %></li>
+
+<li>購入日
+<%= f.text_area :purchase_date, placeholder: "購入日" %></li>
+
+<li>メモ
+<%= f.text_area :memo, placeholder: "メモ" %></li>
+
+<%= f.submit "登録する" %>
+
+
+<% end %>
