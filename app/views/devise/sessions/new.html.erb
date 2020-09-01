@@ -1,4 +1,6 @@
-<div class="registration-page container mt-5">
+<%= render "shared/header" %>
+
+<div class="registration-page container pt-5 mt-5">
     <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f| %>
 
   <h3 class="mb-4">ログイン</h3>
@@ -19,3 +21,5 @@
 
 <% end %>
 </div>
+
+<%= render "shared/footer" %>
