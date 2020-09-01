@@ -1,10 +1,22 @@
-<h1>アイテム一覧ページ</h1>
+<%= render "shared/header" %>
 
-<li><%= link_to 'サインアップ ', new_user_registration_path %></li>
-<li><%= link_to 'サインイン', user_session_path %></li>
-<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-<li><%= link_to 'アイテムを登録する', new_item_path %></li>
+<div class="container-fluid py-3 mt-5">
+  <div class="container">
+    <div class="row">
+      <% @items.each do |item| %>
+        <div class="col-md-3">
+          <div class="card mb-4">
+          <%= image_tag item.image, class:"card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= item.category.name %></h5>
+              <p class="card-text"><%= item.brand.name %></p>
+              <a href="#!" class="card-link">詳細</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% @items.each do |item| %>
-<%= image_tag item.image %>
-<% end %>
+<%= render "shared/footer" %>
