@@ -10,7 +10,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= item.category.name %></h5>
               <p class="card-text"><%= item.brand.name %></p>
-              <a href="#!" class="card-link">詳細</a>
+              <%= link_to "詳細", item_path(item.id), class:"card-link" %>
             </div>
           </div>
         </div>

@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+      <%= image_tag @item.image, class:"card-img-top" %>
+        <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">カテゴリ：<%= @item.category.name %></li>
+          <li class="list-group-item">ブランド：<%= @item.brand.name %></li>
+          <li class="list-group-item">色：<%= @item.color.name %></li>
+          <li class="list-group-item">サイズ：<%= @item.size.name %></li>
+          <li class="list-group-item">購入価格：<%= @item.price %>円</li>
+          <li class="list-group-item">購入日：<%= @item.purchase_date %></li>
+          <li class="list-group-item">メモ：<%= @item.memo %></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">編集</a>
+          <a href="#" class="card-link">削除</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
