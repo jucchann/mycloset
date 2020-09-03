@@ -16,8 +16,8 @@
           <li class="list-group-item">メモ：<%= @item.memo %></li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">編集</a>
-          <a href="#" class="card-link">削除</a>
+          <%= link_to "編集", edit_item_path(@item.id), class:"card-link" %>
+          <%= link_to "削除", item_path, method: :delete, class:"card-link" %>
         </div>
         </div>
       </div>
