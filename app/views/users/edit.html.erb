@@ -1,1 +1,36 @@
-<h1>User情報編集ページ</h1>
+<%= render "shared/header" %>
+
+<div class='register-main container pt-5'>
+
+<%= form_with model: @user, local: true do |f| %>
+
+<h3 class="mb-5">プロフィールの編集</h3>
+
+  <div class='form-group'>
+    <%= f.label :ニックネーム, class:"form-label" %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class:"form-control col-6" %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :メールアドレス, class:"form-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control col-6" %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :パスワード, class:"form-label" %><br />
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"form-control col-6" %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :パスワード（確認用）, class:"form-label" %><br />
+    <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", class:"form-control col-6" %>
+  </div>
+
+  <div class='register'>
+    <%= f.submit "変更", class:"btn btn-primary" %>
+  </div>
+
+<% end %>
+</div>
+
+<%= render "shared/footer" %>
