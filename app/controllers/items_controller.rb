@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
-    @items = Item.all
+    @items = current_user.items
+    # @items = Item.all
   end
 
   def new
@@ -11,22 +13,19 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to items_path
     else
       render :new
     end
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update(item_params)
     if @item.save
       redirect_to item_path
@@ -48,6 +47,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:image, :price, :purchase_date, :memo, :category_id, :brand_id, :color_id, :size_id).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
