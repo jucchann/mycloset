@@ -10,8 +10,6 @@ class Item < ApplicationRecord
     validates :size
   end
 
-  validates :price, numericality: { only_integer: true }
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
   belongs_to_active_hash :brand
