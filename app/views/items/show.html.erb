@@ -16,8 +16,10 @@
           <li class="list-group-item">メモ：<%= @item.memo %></li>
         </ul>
         <div class="card-body">
+          <% if user_signed_in? && current_user.id == @item.user_id %>
           <%= link_to "編集", edit_item_path(@item.id), class:"card-link" %>
           <%= link_to "削除", item_path, method: :delete, class:"card-link" %>
+          <% end %>
         </div>
         </div>
       </div>
