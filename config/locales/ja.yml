@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: メールアドレス
+        nickname: ニックネーム
+
+      item:
+        image: 画像
+        category_id: カテゴリー
+        brand_id: ブランド
+        color_id: 色
+        size_id: サイズ
+        price: 購入価格
+        purchase_date: 購入日
+        memo: メモ
