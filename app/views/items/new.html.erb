@@ -3,6 +3,7 @@
 <div class="container col-md-4">
   <h3 class="pt-3 mb-5">アイテムを登録しよう！</h3>
   <%= form_with model: @item, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
     <form>
       <div class="form-group">
         <label for="exampleFormControlTextarea1" class="font-weight-bold">画像
