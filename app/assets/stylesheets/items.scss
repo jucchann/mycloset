@@ -1,3 +1,14 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.index-top {
+  background-image: image-url("index-top.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 40vh;
+  min-width: 100vw;
+  opacity: 0.9;
+}
